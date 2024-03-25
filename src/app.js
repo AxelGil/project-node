@@ -5,7 +5,7 @@ const { authenticateToken } = require('./middlewares/authMiddleware');
 const pool = require('./database');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3500;
 
 // Utilise le middleware body-parser pour traiter les données JSON
 //app.use(bodyParser.json());
