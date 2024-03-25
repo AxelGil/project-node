@@ -3,8 +3,8 @@
 const knex = require('knex')(require('./knexfile')['development']);
 
 // Create
-async function createCandidature(user_id, job_id) {
-  return await knex('candidature').insert({ user_id, job_id });
+async function createCandidature(id_user, id_job) {
+  return await knex('candidature').insert({ id_user, id_job });
 }
 
 async function getAllCandidature() {
