@@ -3,35 +3,23 @@
 const knex = require('knex')(require('./knexfile')['development']);
 
 // Create
-async function createBoisson(name, quantity, price) {
-  return await knex('boissons').insert({ name, quantity, price });
+async function createJob(name, job_type, companie, location, salary) {
+  return await knex('job').insert({ name, job_type, companie, location, salary });
 }
 
 // Read
-async function getAllBoissons() {
-  return await knex.select().from('boissons');
+async function getAllJobs() {
+  return await knex.select().from('job');
 }
 
-async function getBoisonById(id) {
-  return await knex('boissons').where({ id }).first();
-}
-
-// Update
-async function updateBoisson(id, quantity) {
-  return await knex('boissons').where({ id }).update({ quantity });
-}
-
-// Delete
-async function deletBoisson(id) {
-  return await knex('boissons').where({ id }).del();
+async function getJobById(id) {
+  return await knex('job').where({ id }).first();
 }
 
 module.exports = {
-  createBoisson,
-  getAllBoissons,
-  getBoisonById,
-  updateBoisson,
-  deletBoisson
+  createJob,
+  getAllJobs,
+  getJobById,
 };
 
 // npm install knex sqlite3
