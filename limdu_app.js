@@ -33,14 +33,6 @@ const candidature = require("./models/candidatureModel");
     { input: "Quels sont les postes disponibles", output: "emplois" },
     { input: "Comment puis je postuler à un emploi", output: "emplois" },
     { input: "Je veux soumettre ma candidature", output: "candidatures" },
-    {
-      input: "Comment puis je me porter candidat à un poste",
-      output: "candidatures",
-    },
-    {
-      input: "Je cherche des informations sur le processus de recrutement",
-      output: "candidatures",
-    },
   ]);
 
   var intentClassifierTypeEmploi = new limdu.classifiers.EnhancedClassifier({
@@ -226,8 +218,8 @@ const candidature = require("./models/candidatureModel");
     }
     console.log("Voici la liste de vos candidatures : ");
     yourCandidatures.forEach(async (candidature) => {
-      const job = await job.getJobById(candidature.id_job);
-      console.log(job.titre_poste);
+      const iJob = await job.getJobById(candidature.id_job);
+      console.log(iJob.titre_poste);
     });
   }
 })();
