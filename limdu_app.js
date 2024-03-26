@@ -176,12 +176,19 @@ const candidature = require("./models/candidatureModel");
   ]);
 
   const jobs = await job.getAllJobs();
-  let currentuser;
+  let currentUser;
   do {
     const nom = prompt("Bonjour, veuillez entrer votre nom :");
     const prenom = prompt("Votre prénom :");
-    currentuser = await user.getUserByName(prenom, nom);
-  } while (typeof currentuser == undefined);
+    try {
+      currentUser = await user.getUserByName(prenom, nom);
+      if (!currentUser) {
+        console.log("Utilisateur non trouvé. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error("Une erreur s'est produite lors de la récupération des données de l'utilisateur :", error);
+    }
+  } while (!currentUser);
 
   console.log(
     "Vous pouvez : Consulter des offres d'emplois & Postuler, Consulter vos candidatures"
@@ -233,7 +240,7 @@ const candidature = require("./models/candidatureModel");
     }
   }
 
-  if (predicted_response[0] == "candidatures") {
+  if (predicted_response[0] == "candidature") {
     const yourCandidatures = await candidature.getCandidatureByUserId(
       currentuser.id
     );
