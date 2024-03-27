@@ -346,7 +346,7 @@ const candidature = require("./models/candidatureModel");
   if (predicted_response_inscription[0] == "oui") {
     const nom = prompt("Bonjour, veuillez entrer votre nom :");
     const prenom = prompt("Votre prénom :");
-    currentUser = user.createUser(prenom, nom);
+    currentUser = await user.createUser(prenom, nom);
     console.log(
       "Inscription réussie ! " + prenom + " " + nom + " est inscrit."
     );
@@ -355,7 +355,7 @@ const candidature = require("./models/candidatureModel");
       const nom = prompt("Bonjour, veuillez entrer votre nom :");
       const prenom = prompt("Votre prénom :");
       try {
-        currentUser = user.getUserByName(prenom, nom);
+        currentUser = await user.getUserByName(prenom, nom);
         if (!currentUser) {
           console.log("Utilisateur non trouvé. Veuillez réessayer.");
         }
@@ -445,7 +445,5 @@ const candidature = require("./models/candidatureModel");
           " €"
       );
     });
-
-    console.log("Voilà vos candidatures, Au revoir !");
   }
 })();
