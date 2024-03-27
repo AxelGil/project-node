@@ -216,7 +216,7 @@ const candidature = require("./models/candidatureModel");
           intentClassifierOuiNon.classify(questionsPostuler);
         if (predicted_response_postuler[0] == "oui") {
           const listcandidature = await candidature.createCandidature(
-            currentuser.id,
+            currentUser.id,
             iJob.id
           );
           const questionsCountCandidatures = prompt(
@@ -228,13 +228,17 @@ const candidature = require("./models/candidatureModel");
             console.log(
               "Le nombre de candidatures à ce poste : " + listcandidature.length
             );
+            console.log("Au revoir.");
+            return;
           }
           if (predicted_response_count_candidature == "non") {
             console.log("Au revoir.");
+            return;
           }
         }
         if (predicted_response_postuler[0] == "non") {
           console.log("Au revoir.");
+          return;
         }
       }
     }
@@ -252,5 +256,7 @@ const candidature = require("./models/candidatureModel");
       const iJob = await job.getJobById(candidature.id_job);
       console.log(iJob.titre_poste);
     });
+
+    console.log("Voilà vos candidatures, Au revoir !");
   }
 })();
