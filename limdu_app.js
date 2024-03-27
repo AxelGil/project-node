@@ -359,9 +359,9 @@ const candidature = require("./models/candidatureModel");
         if (!currentUser) {
           console.log("Utilisateur non trouvé. Veuillez réessayer.");
         }
-        console.log(
-          "Bienvenue " + prenom + " " + nom + ", vous êtes connecté."
-        );
+        if (currentUser) {
+          console.log("Bienvenue " + prenom + " " + nom + ", vous êtes connecté.");
+        }
       } catch (error) {
         console.error(
           "Une erreur s'est produite lors de la récupération des données de l'utilisateur :",
