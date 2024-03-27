@@ -240,9 +240,9 @@ const candidature = require("./models/candidatureModel");
     }
   }
 
-  if (predicted_response[0] == "candidature") {
+  if (predicted_response[0] == "candidatures") {
     const yourCandidatures = await candidature.getCandidatureByUserId(
-      currentuser.id
+      currentUser.id
     );
     if (yourCandidatures.length == 0) {
       return console.log("Vous n'avez pas encore postulé à un poste.");
