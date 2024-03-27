@@ -32,31 +32,120 @@ const candidature = require("./models/candidatureModel");
     { input: "Ou puis je trouver des offres d emplois", output: "emplois" },
     { input: "Quels sont les postes disponibles", output: "emplois" },
     { input: "Comment puis je postuler à un emploi", output: "emplois" },
-    { input: "Je suis a la recherche de nouvelles opportunites professionnelles", output: "emplois" },
-    { input: "J'aimerais decouvrir les postes vacants disponibles", output: "emplois" },
-    { input: "Je souhaite explorer les offres d emploi dans mon domaine", output: "emplois" },
-    { input: "Je suis interesse par les opportunites de carriere actuellement disponibles", output: "emplois" },
-    { input: "J aspire à trouver un emploi correspondant a mes competences et e mes interets", output: "emplois" },
-    { input: "Je désire consulter les offres d emploi pour elargir mes horizons professionnels", output: "emplois" },
-    { input: "Je suis curieux de voir ce que le marche du travail a a offrir", output: "emplois" },
-    { input: "Je suis motive à trouver un emploi qui correspond a mes objectifs professionnels", output: "emplois" },
-    { input: "J ai hate de decouvrir de nouvelles opportunites professionnelles excitantes", output: "emplois" },
-    { input: "Je suis ouvert a explorer de nouveaux defis professionnels et a contribuer de maniere significative", output: "emplois" },
+    {
+      input:
+        "Je suis a la recherche de nouvelles opportunites professionnelles",
+      output: "emplois",
+    },
+    {
+      input: "J'aimerais decouvrir les postes vacants disponibles",
+      output: "emplois",
+    },
+    {
+      input: "Je souhaite explorer les offres d emploi dans mon domaine",
+      output: "emplois",
+    },
+    {
+      input:
+        "Je suis interesse par les opportunites de carriere actuellement disponibles",
+      output: "emplois",
+    },
+    {
+      input:
+        "J aspire à trouver un emploi correspondant a mes competences et e mes interets",
+      output: "emplois",
+    },
+    {
+      input:
+        "Je désire consulter les offres d emploi pour elargir mes horizons professionnels",
+      output: "emplois",
+    },
+    {
+      input: "Je suis curieux de voir ce que le marche du travail a a offrir",
+      output: "emplois",
+    },
+    {
+      input:
+        "Je suis motive à trouver un emploi qui correspond a mes objectifs professionnels",
+      output: "emplois",
+    },
+    {
+      input:
+        "J ai hate de decouvrir de nouvelles opportunites professionnelles excitantes",
+      output: "emplois",
+    },
+    {
+      input:
+        "Je suis ouvert a explorer de nouveaux defis professionnels et a contribuer de maniere significative",
+      output: "emplois",
+    },
 
-    { input: "Je souhaite suivre l evolution de mes candidatures recentes", output: "candidatures" },
-    { input: "J aimerais connaitre le statut de mes demandes d emploi en cours", output: "candidatures" },
-    { input: "Je voudrais verifier les reponses aux candidatures que j ai soumises", output: "candidatures" },
-    { input: "Je desire consulter les retours des entreprises sur mes candidatures", output: "candidatures" },
-    { input: "Je suis intéresse par l avancement de mes demarches pour trouver un emploi", output: "candidatures" },
-    { input: "Je veux m assurer que mes candidatures sont bien prises en consideration", output: "candidatures" },
-    { input: "Je suis motive a suivre de pres mes progres dans ma recherche d emploi", output: "candidatures" },
-    { input: "Je souhaite suivre l evolution de mes candidatures recentes", output: "candidatures" },
-    { input: "J aimerais connaître le statut actuel de mes demandes d emploi", output: "candidatures" },
-    { input: "Je voudrais verifier les reponses reçues suite a mes soumissions de candidatures", output: "candidatures" },
-    { input: "Je desire consulter les retours des entreprises concernant mes candidatures", output: "candidatures" },
-    { input: "Je suis interesse par le suivi de mes demarches pour trouver un emploi", output: "candidatures" },
-    { input: "Je souhaite m assurer que mes candidatures sont prises en consideration comme il se doit", output: "candidatures" },
-    { input: "Je suis motive a observer de pres mes avancees dans ma quete d emploi", output: "candidatures" },
+    {
+      input: "Je souhaite suivre l evolution de mes candidatures recentes",
+      output: "candidatures",
+    },
+    {
+      input: "J aimerais connaitre le statut de mes demandes d emploi en cours",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je voudrais verifier les reponses aux candidatures que j ai soumises",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je desire consulter les retours des entreprises sur mes candidatures",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je suis intéresse par l avancement de mes demarches pour trouver un emploi",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je veux m assurer que mes candidatures sont bien prises en consideration",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je suis motive a suivre de pres mes progres dans ma recherche d emploi",
+      output: "candidatures",
+    },
+    {
+      input: "Je souhaite suivre l evolution de mes candidatures recentes",
+      output: "candidatures",
+    },
+    {
+      input: "J aimerais connaître le statut actuel de mes demandes d emploi",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je voudrais verifier les reponses reçues suite a mes soumissions de candidatures",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je desire consulter les retours des entreprises concernant mes candidatures",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je suis interesse par le suivi de mes demarches pour trouver un emploi",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je souhaite m assurer que mes candidatures sont prises en consideration comme il se doit",
+      output: "candidatures",
+    },
+    {
+      input:
+        "Je suis motive a observer de pres mes avancees dans ma quete d emploi",
+      output: "candidatures",
+    },
   ]);
 
   var intentClassifierTypeEmploi = new limdu.classifiers.EnhancedClassifier({
@@ -73,7 +162,7 @@ const candidature = require("./models/candidatureModel");
     { input: "Je voudrais travailler comme patissier", output: "cuisinier" },
     {
       input: "Ou puis je trouver des annonces pour un developpeur junior",
-      output: "developpeur",
+      output: "developpeur logiciel",
     },
     {
       input: "Quels postes sont disponibles pour un ingenieur en informatique",
@@ -102,7 +191,7 @@ const candidature = require("./models/candidatureModel");
     },
     {
       input: "Ou puis je postuler pour un emploi de developpeur Android",
-      output: "developpeur",
+      output: "developpeur logiciel",
     },
     {
       input:
@@ -136,7 +225,7 @@ const candidature = require("./models/candidatureModel");
     {
       input:
         "Ou puis je trouver des offres d emploi pour un developpeur fullstack",
-      output: "developpeur",
+      output: "developpeur logiciel",
     },
     {
       input:
@@ -176,19 +265,33 @@ const candidature = require("./models/candidatureModel");
   ]);
 
   const jobs = await job.getAllJobs();
+  const questionInscription = prompt("Voulez-vous vous inscrire (oui/non) ?");
+  predicted_response_inscription =
+    intentClassifierOuiNon.classify(questionInscription);
   let currentUser;
-  do {
+  if (predicted_response_inscription[0] == "oui") {
     const nom = prompt("Bonjour, veuillez entrer votre nom :");
     const prenom = prompt("Votre prénom :");
-    try {
-      currentUser = await user.getUserByName(prenom, nom);
-      if (!currentUser) {
-        console.log("Utilisateur non trouvé. Veuillez réessayer.");
+    currentUser = user.createUser(prenom, nom);
+    console.log("Inscription réussie ! " + prenom + " " + nom + " est inscrit.");
+  } else {
+    do {
+      const nom = prompt("Bonjour, veuillez entrer votre nom :");
+      const prenom = prompt("Votre prénom :");
+      try {
+        currentUser = user.getUserByName(prenom, nom);
+        if (!currentUser) {
+          console.log("Utilisateur non trouvé. Veuillez réessayer.");
+        }
+        console.log("Bienvenue " + currentUser.firstname + " " + currentUser.name);
+      } catch (error) {
+        console.error(
+          "Une erreur s'est produite lors de la récupération des données de l'utilisateur :",
+          error
+        );
       }
-    } catch (error) {
-      console.error("Une erreur s'est produite lors de la récupération des données de l'utilisateur :", error);
-    }
-  } while (!currentUser);
+    } while (!currentUser);
+  }
 
   console.log(
     "Vous pouvez : Consulter des offres d'emplois & Postuler, Consulter vos candidatures"
@@ -203,13 +306,12 @@ const candidature = require("./models/candidatureModel");
       intentClassifierTypeEmploi.classify(questionsEmplois);
     for (iJob of jobs) {
       if (iJob.job_type == predicted_response_type_emploi[0]) {
-        console.log("Voici la liste de jobs pour le poste de ${job.job_type}");
+        console.log("Voici la liste de jobs pour le poste : ");
         console.log(
-          iJob["titre_poste"],
-          iJob["job_type"],
-          iJob["companie"],
-          iJob["location"],
-          iJob["salaire"]
+          iJob["titre_poste"] + " - ",
+          iJob["companie"] + " - ",
+          iJob["location"] + " - ",
+          iJob["salaire"] + " €"
         );
         const questionsPostuler = prompt("Voulez-vous y postuler (oui/non) ?");
         predicted_response_postuler =
@@ -254,7 +356,16 @@ const candidature = require("./models/candidatureModel");
     console.log("Voici la liste de vos candidatures : ");
     yourCandidatures.forEach(async (candidature) => {
       const iJob = await job.getJobById(candidature.id_job);
-      console.log(iJob.titre_poste);
+      console.log(
+        iJob.titre_poste +
+          " - " +
+          iJob.companie +
+          " - " +
+          iJob.location +
+          " - " +
+          iJob.salaire +
+          " €"
+      );
     });
 
     console.log("Voilà vos candidatures, Au revoir !");
