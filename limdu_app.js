@@ -161,10 +161,6 @@ const candidature = require("./models/candidatureModel");
     },
     { input: "Je voudrais travailler comme patissier", output: "cuisinier" },
     {
-      input: "Ou puis je trouver des annonces pour un developpeur junior",
-      output: "developpeur logiciel",
-    },
-    {
       input: "Quels postes sont disponibles pour un ingenieur en informatique",
       output: "ingenieur logiciel",
     },
@@ -188,10 +184,6 @@ const candidature = require("./models/candidatureModel");
     {
       input: "Je veux devenir chef cuisinier dans un restaurant etoile",
       output: "cuisinier",
-    },
-    {
-      input: "Ou puis je postuler pour un emploi de developpeur Android",
-      output: "developpeur logiciel",
     },
     {
       input:
@@ -224,11 +216,6 @@ const candidature = require("./models/candidatureModel");
     },
     {
       input:
-        "Ou puis je trouver des offres d emploi pour un developpeur fullstack",
-      output: "developpeur logiciel",
-    },
-    {
-      input:
         "Quels sont les postes disponibles pour un ingenieur logiciel experimente",
       output: "ingenieur logiciel",
     },
@@ -241,6 +228,92 @@ const candidature = require("./models/candidatureModel");
       input: "Je cherche des offres pour un chef de projet informatique",
       output: "chef de projet",
     },
+    { input: "Recherche développeur front end", output: "developpeur web" },
+    { input: "Emploi developpeur web", output: "developpeur web" },
+    { input: "Opportunité developpeur web", output: "developpeur web" },
+    { input: "Poste developpeur web", output: "developpeur web" },
+    { input: "Offre developpeur web", output: "developpeur web" },
+    { input: "Cherche developpeur web", output: "developpeur web" },
+    { input: "Travail developpeur web", output: "developpeur web" },
+    { input: "Carrière developpeur web", output: "developpeur web" },
+    { input: "Recrutement developpeur web", output: "developpeur web" },
+    { input: "Mission developpeur web", output: "developpeur web" },
+    { input: "Emploi cuisinier restaurant", output: "cuisinier" },
+    { input: "Cherche cuisinier qualifie", output: "cuisinier" },
+    { input: "Recrutement cuisinier", output: "cuisinier" },
+    { input: "Opportunité cuisinier", output: "cuisinier" },
+    { input: "Poste cuisinier gastronomique", output: "cuisinier" },
+    { input: "Travail cuisinier professionnel", output: "cuisinier" },
+    { input: "Recherche cuisinier expérimenté", output: "cuisinier" },
+    { input: "Mission cuisinier", output: "cuisinier" },
+    { input: "Offre cuisinier", output: "cuisinier" },
+    { input: "Carrière cuisinier", output: "cuisinier" },
+    { input: "Emploi ingénieur informatique", output: "ingenieur logiciel" },
+    {
+      input: "Cherche ingénieur logiciel expérimenté",
+      output: "ingenieur logiciel",
+    },
+    {
+      input: "Recrutement ingénieur développement",
+      output: "ingenieur logiciel",
+    },
+    { input: "Opportunité ingénieur R&D", output: "ingenieur logiciel" },
+    {
+      input: "Poste ingénieur logiciel embarqué",
+      output: "ingenieur logiciel",
+    },
+    { input: "Offre ingénieur système", output: "ingenieur logiciel" },
+    { input: "Travail ingénieur software", output: "ingenieur logiciel" },
+    {
+      input: "Recherche ingénieur génie logiciel",
+      output: "ingenieur logiciel",
+    },
+    { input: "Mission ingénieur conception", output: "ingenieur logiciel" },
+    { input: "Emploi analyste big data", output: "analyste de donnees" },
+    { input: "Cherche analyste statistique", output: "analyste de donnees" },
+    {
+      input: "Recrutement analyste business intelligence",
+      output: "analyste de donnees",
+    },
+    { input: "Opportunité analyste datamining", output: "analyste de donnees" },
+    {
+      input: "Poste analyste intelligence artificielle",
+      output: "analyste de donnees",
+    },
+    { input: "Offre analyste données clients", output: "analyste de donnees" },
+    {
+      input: "Travail analyste informatique décisionnelle",
+      output: "analyste de donnees",
+    },
+    {
+      input: "Recherche analyste données financières",
+      output: "analyste de donnees",
+    },
+    {
+      input: "Mission analyste marketing numérique",
+      output: "analyste de donnees",
+    },
+    {
+      input: "Carrière analyste scientifique des données",
+      output: "analyste de donnees",
+    },
+    { input: "Emploi chef de projet informatique", output: "chef de projet" },
+    { input: "Cherche chef de projet agile", output: "chef de projet" },
+    { input: "Recrutement chef de projet technique", output: "chef de projet" },
+    { input: "Opportunité chef de projet digital", output: "chef de projet" },
+    { input: "Poste chef de projet senior", output: "chef de projet" },
+    { input: "Offre chef de projet IT", output: "chef de projet" },
+    { input: "Travail chef de projet marketing", output: "chef de projet" },
+    { input: "Recherche chef de projet fonctionnel", output: "chef de projet" },
+    { input: "Mission chef de projet ERP", output: "chef de projet" },
+    {
+      input: "Carrière chef de projet international",
+      output: "chef de projet",
+    },
+    { input: "Emploi spécialiste cybersécurité", output: "cybersecurite" },
+    { input: "Cherche expert sécurité informatique", output: "cybersecurite" },
+    { input: "Recrutement analyste cyberdéfense", output: "cybersecurite" },
+    { input: "Opportunité ingénieur cryptographie", output: "cybersecurite" },
   ]);
 
   //rennomez
@@ -262,6 +335,7 @@ const candidature = require("./models/candidatureModel");
     { input: "je passe mon tour", output: "non" },
     { input: "je decline", output: "non" },
     { input: "pas interesse", output: "non" },
+    { input: "", output: "non" },
   ]);
 
   const jobs = await job.getAllJobs();
@@ -273,7 +347,9 @@ const candidature = require("./models/candidatureModel");
     const nom = prompt("Bonjour, veuillez entrer votre nom :");
     const prenom = prompt("Votre prénom :");
     currentUser = user.createUser(prenom, nom);
-    console.log("Inscription réussie ! " + prenom + " " + nom + " est inscrit.");
+    console.log(
+      "Inscription réussie ! " + prenom + " " + nom + " est inscrit."
+    );
   } else {
     do {
       const nom = prompt("Bonjour, veuillez entrer votre nom :");
@@ -283,7 +359,9 @@ const candidature = require("./models/candidatureModel");
         if (!currentUser) {
           console.log("Utilisateur non trouvé. Veuillez réessayer.");
         }
-        console.log("Bienvenue " + currentUser.firstname + " " + currentUser.name);
+        console.log(
+          "Bienvenue " + prenom + " " + nom + ", vous êtes connecté."
+        );
       } catch (error) {
         console.error(
           "Une erreur s'est produite lors de la récupération des données de l'utilisateur :",
